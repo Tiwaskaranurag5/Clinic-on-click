@@ -1,0 +1,16 @@
+Hospitalimg{
+    
+    justify-content: center;
+}
+.main_display_image{
+    margin-top: 100px;
+}
+.main_display_form{
+    margin-top: 100px;
+}
+.transparent-btn{
+    background-color: transparent;
+    color: rgb(148, 148, 148);
+    border: transparent;
+}
+
