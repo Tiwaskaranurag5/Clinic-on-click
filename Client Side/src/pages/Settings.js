@@ -43,7 +43,7 @@ function Settings() {
                         <div className="row mb-3">
                             <label htmlFor="name" className="col-sm-3 col-form-label">Full Name </label>
                             <div class="col-sm-9">
-                                <input type="text" name="name" className="form-control" id="name" placeholder='Enter your full name' value={`${patient.patName}`} disabled/>
+                                <input type="text" name="name" className="form-control" id="name" placeholder='Enter your full name' value={`${patient.patName}`} />
                             </div>
                         </div> 
 

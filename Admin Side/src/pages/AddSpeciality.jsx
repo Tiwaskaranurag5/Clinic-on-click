@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Axios from 'axios'
 import { url } from '../commons/constants';
+import { useHistory } from 'react-router';
 
 function AddSpeciality() {
     const [spec_name, setSpec_name] = useState('')
     const [spec_description, setSpec_description] = useState('');
     const [spec_icon, setSpec_icon] = useState(undefined);
+    const history = useHistory();
 
     const addSpecialityToDB = (e) =>{
         e.preventDefault()
@@ -20,6 +22,7 @@ function AddSpeciality() {
             console.log(response.status)
             console.log(response.data)
             window.alert('New Speciality is successfully added !')
+            history.push("/specialities")
             // if(response.status === 'success'){
             // }else{
             //     window.alert('problem in adding new speciality !')

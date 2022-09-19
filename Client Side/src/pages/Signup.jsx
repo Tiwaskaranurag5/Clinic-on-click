@@ -9,6 +9,7 @@ import {url} from '../commons/constants';
 import { Link } from 'react-router-dom';
 
 function Signup() {
+    
 
     const validEmail = new RegExp(
         '.+\@.+\..+'
@@ -67,7 +68,7 @@ function Signup() {
                             window.alert('. . . CONGRATS ! YOU ARE SUCCESSFULLY REGISTERED AS PATIENT AT DIGIHEAL  . . .');
                             window.location = '/';
                         }else{
-                            window.alert('Wrong Credentials..')
+                           window.alert("this email is already registred")
                         }
                     })
                     

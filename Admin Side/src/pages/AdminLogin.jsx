@@ -54,7 +54,7 @@ function Signin({setIsAuthorized}) {
 
                         <div className="row mb-3">
                             <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
+                            <div className="col-sm-10">
                                 <input type="email" name="email" className="form-control" id="email" placeholder='Enter your registered email-id' 
                                   onChange={(e) => {
                                     setemailLogin(e.target.value)
@@ -63,7 +63,7 @@ function Signin({setIsAuthorized}) {
                         </div>
                         <div className="row mb-3">
                             <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
+                            <div className="col-sm-10">
                                 <input type="password" name="password" className="form-control" id="password" placeholder='Enter your password'  
                                 onChange={(e) => {
                                     setpasswordLogin(e.target.value)
@@ -72,9 +72,9 @@ function Signin({setIsAuthorized}) {
                         </div>
 
                         <div style={{ textAlign: 'center' }}>
-                            <button type="submit" class="btn btn-success" onClick={logIn}>Log in</button><br/>
+                            <button type="submit" className="btn btn-success" onClick={logIn}>Log in</button><br/>
 
-                            <button type="button" class="btn btn-secondary transparent-btn">Forget Password</button>
+                            <button type="button" className="btn btn-secondary transparent-btn">Forget Password</button>
 
                         </div>
 

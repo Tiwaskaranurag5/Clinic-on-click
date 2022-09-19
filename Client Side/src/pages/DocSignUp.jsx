@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import axios from 'axios';
 import { url } from './../commons/constants';
-import { useHistory, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 function DocSignUp() {
 
     //For Speciality Drop Down list
     const [allspecs , setAllSpec] = useState([])
-    let history = useHistory()
+    // let history = useHistory()
 
     const validEmail = new RegExp(
         '.+\@.+\..+'
@@ -111,7 +111,7 @@ function DocSignUp() {
                 try {
                     Axios.post(url+'/doctor', data).then((response) => {
                         const result = response.data;
-                        if(result.status == "success"){
+                        if(result.status === "success"){
                             // console.log(response.status);
                             // console.log(response.data);
                             window.alert('YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT DIGIHEAL !');
