@@ -8,7 +8,7 @@ import ViewDocInfo from './ViewDocInfo';
 import { url } from './../commons/constants';
 import ChangeDocPassUsingOld from './ChangeDocPassUsingOld';
 
-function DoctorDashboard({setIsAuthorized}) {
+function DoctorDashboard({setIsdrAuthorized}) {
     const history= useHistory()
     var cred = sessionStorage.getItem('DocCreds');
     var doctor = JSON.parse(cred);
@@ -18,7 +18,7 @@ function DoctorDashboard({setIsAuthorized}) {
                     const result = response.data;
                     if(result.status === 'success'){
                         sessionStorage.clear();
-                        setIsAuthorized(false)
+                        setIsdrAuthorized(false)
                         history.push('/docsignin');
                     }
             })
@@ -33,7 +33,7 @@ function DoctorDashboard({setIsAuthorized}) {
                 <header class="header" id="header">
                     {/* <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> */}
                     <a className="navbar-brand" href="#">
-                        <img src="\images\logo_DigiHeal.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />   
+                        <img src="\images\COC.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />   
                     </a>
                     <p style={{marginLeft: "auto" ,marginRight: "15px",fontSize:'20px',marginTop:'10px'}}>Hello, Dr. {doctor.docName}</p>
                     <div class="header_img"> <img src={url + '/'+`${doctor.docProfilePic}`} alt={doctor.docProfilePic} /> </div>

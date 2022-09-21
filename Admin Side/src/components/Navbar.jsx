@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Specialities from './../pages/Specialities';
 import Doctors from './../pages/Doctors';
 import Patients from './../pages/Patients';
@@ -12,6 +12,14 @@ import Slots from './../pages/Slots';
 import AddSlot from './../pages/AddSlot';
 
 function Navbar({authorized, setIsAuthorized}) {
+    const history = useHistory();
+    var logout = () => {
+        if(window.confirm('Do you really want to log out ?')){
+            sessionStorage.clear();
+            setIsAuthorized(false);
+            history.push('/');
+        }
+    }
     // if( !authorized)
     // return <Redirect to= '/nav'/>
     return (
@@ -40,16 +48,16 @@ function Navbar({authorized, setIsAuthorized}) {
                         <Link to="/allslots">
                             <a class="nav-item nav-link" >Slots</a>
                         </Link>
-                        <Link to="/">
-                            <div class="nav-item nav-link" style={{textAlign:'right'}} onClick={()=>{setIsAuthorized(false)}}>Logout</div>
-                        </Link>
+                        
+                            <div class="nav-item nav-link" style={{textAlign:'right'}} role="button" onClick={logout}><button>Logout</button></div>
+                        
                     </div>
                 </div>
             </nav>
          
                 <Switch>
                     <Route exact path="/">
-                        <Redirect to="/doctors"/>
+                        <Redirect to="/"/>
                     </Route> 
                     <Route path="/doctors" component={Doctors}/>
                     <Route path="/specialities" component={Specialities}/>

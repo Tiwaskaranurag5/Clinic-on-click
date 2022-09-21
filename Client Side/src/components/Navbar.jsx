@@ -32,7 +32,7 @@ function Navbar({ setIsAuthorized }) {
                 <header class="header" id="header">
                     {/* <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> */}
                     <Link className="navbar-brand" to="/welcome">
-                        <img src="\images\logo_DigiHeal.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />
+                        <img src="\images\COC.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />
                     </Link>
                     <p style={{ marginLeft: "auto", marginRight: "11px", marginTop: "15px", fontSize: '20px' }}>Hello, {cred.patName}</p>
                     <div class="header_img"> <img src="\images\person-profile.png" alt={cred.patName} /> </div>

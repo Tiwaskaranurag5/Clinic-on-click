@@ -8,7 +8,7 @@ import { url } from './../commons/constants';
 import { Link, useHistory } from 'react-router-dom';
 
 
-function DocSignin({ setIsAuthorized }) {
+function DocSignin({ setIsdrAuthorized }) {
 
     let history = useHistory();
     const [emailLogin, setemailLogin] = useState('')
@@ -39,7 +39,7 @@ function DocSignin({ setIsAuthorized }) {
                         console.log(result.data);
                         sessionStorage.setItem('DocCreds', JSON.stringify(result.data))
                         // window.location = '/docsignin';
-                        setIsAuthorized(true)
+                        setIsdrAuthorized(true)
                         window.alert('Hey! you are Successfully Logged In to DigiHeal');
                         history.push('/docsignin')
                     } else {

@@ -73,8 +73,9 @@ function Signin({setIsAuthorized}) {
 
                         <div style={{ textAlign: 'center' }}>
                             <button type="submit" class="btn btn-success" onClick={logIn}>Log in</button><br/>
-
-                            <button type="button" class="btn btn-secondary transparent-btn">Forget Password</button>
+                            <Link to='/forgotpassword'>
+                                <button type="button" class="btn btn-secondary transparent-btn" >Forgot Password ?</button>
+                            </Link>
 
                         </div>
 

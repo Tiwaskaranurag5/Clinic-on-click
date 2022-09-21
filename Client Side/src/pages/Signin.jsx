@@ -115,6 +115,7 @@ function Signin({ setIsAuthorized }) {
                             <Link to="/signup">
                                 <button type="button" class="btn btn-primary" onClick={() => { return <Redirect to='/signup' /> }}>Create New Account</button>
                             </Link>
+                            
                         </div>
 
                     </div>
