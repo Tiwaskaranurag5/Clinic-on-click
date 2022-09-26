@@ -24,8 +24,8 @@ function Signin({ setIsAuthorized }) {
                 text: "please enter email Id",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:255  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                    x: 600, 
+                    y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -38,8 +38,8 @@ function Signin({ setIsAuthorized }) {
                 text: "Please enter password",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:310  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                    x: 600, 
+                    y: 5   // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -86,7 +86,18 @@ function Signin({ setIsAuthorized }) {
                        // window.alert('Hey! you are Successfully Logged In to Clinic-on-click');
                         //history.push('/')
                     } else {
-                        window.alert('Registeration Failed..');
+                        Toastify({
+                            text: " Registeration Failed..",
+                            className: "info",
+                            offset: {
+                                    x:500, 
+                                    y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                  },
+                                style: {
+                                      background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                    }
+                                  }).showToast();
+                       // window.alert('Registeration Failed..');
 
                     }
 
@@ -96,8 +107,8 @@ function Signin({ setIsAuthorized }) {
                     text: "Invalid Email or Password",
                     className: "info",
                     offset: {
-                            x: 500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                            y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                        x:500, 
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
                           },
                         style: {
                               background: "linear-gradient(to right, #FF0000, #FF0000)",

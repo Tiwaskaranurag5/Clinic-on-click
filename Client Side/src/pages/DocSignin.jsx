@@ -25,8 +25,8 @@ function DocSignin({ setIsdrAuthorized }) {
                 text: "please enter email Id",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:340  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                    x: 600, 
+                    y: 5   // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -37,8 +37,8 @@ function DocSignin({ setIsdrAuthorized }) {
                 text: "please enter password",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:392  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                    x: 600, 
+                    y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",

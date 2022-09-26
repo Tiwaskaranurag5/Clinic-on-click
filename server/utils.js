@@ -1,4 +1,4 @@
-function createResult(error, data) {
+cdfunction createResult(error, data) {
   const result = {}
   if (error) {
     result['error'] = error

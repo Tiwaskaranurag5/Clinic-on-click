@@ -21,8 +21,8 @@ function ChangeDocPassUsingOld() {
                 text: " Please enter old password",
                 className: "info",
                 offset: {
-                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:245 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                        x: 600, 
+                        y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right,#FF0000, #FF0000)",
@@ -34,8 +34,8 @@ function ChangeDocPassUsingOld() {
                 text: " Please enter new password",
                 className: "info",
                 offset: {
-                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:330 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -50,8 +50,8 @@ function ChangeDocPassUsingOld() {
                 text: " password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space'",
                 className: "info",
                 offset: {
-                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:330 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -69,8 +69,8 @@ function ChangeDocPassUsingOld() {
                 text: " Password Does not match",
                 className: "info",
                 offset: {
-                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:415 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",

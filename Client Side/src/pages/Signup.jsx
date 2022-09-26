@@ -34,8 +34,8 @@ function Signup() {
                 text: "please enter name",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y: 78 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                        x: 600, 
+                        y: 5    // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -48,8 +48,8 @@ function Signup() {
                 text: "please select gender",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:130 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -62,9 +62,8 @@ function Signup() {
                 text: "please enter 10 digit phone number",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-
-                        y:200 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
 
                       },
                     style: {
@@ -77,8 +76,8 @@ function Signup() {
                 text: "Email id cannot be empty",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:260 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -89,8 +88,8 @@ function Signup() {
                 text: "Please enter valid email id",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:260 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -102,8 +101,8 @@ function Signup() {
                 text: "Password cannot be empty",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:320 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -114,8 +113,8 @@ function Signup() {
                 text: " password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:320 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -128,8 +127,8 @@ function Signup() {
                 text: " Please select date of birth",
                 className: "info",
                 offset: {
-                  x:800, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                  y:-20  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x: 600, 
+                  y: 5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
@@ -157,8 +156,8 @@ function Signup() {
                                 text: "You have successfully registered as patient",
                                 className: "info",
                                 offset: {
-                                        x:800, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                                        y:-20 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                  x:500, 
+                                  y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
                                       },
                                     style: {
                                           background: "linear-gradient(to right, #32cd32, #32cd32)",
@@ -171,8 +170,8 @@ function Signup() {
                                 text: " This email is already registered",
                                 className: "info",
                                 offset: {
-                                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                                        y:260 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                  x:500, 
+                                  y:5// vertical axis - can be a number or a string indicating unity. eg: '2em'
                                       },
                                     style: {
                                           background: "linear-gradient(to right, #FF0000, #FF0000)",

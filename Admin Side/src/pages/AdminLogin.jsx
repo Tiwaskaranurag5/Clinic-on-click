@@ -29,7 +29,7 @@ function Signin({setIsAuthorized}) {
                 console.log(result.data);
                 localStorage.setItem("admin",JSON.stringify(response.data));
                 setIsAuthorized(true)
-                window.alert('Hey! you are Successfully Logged In to DigiHeal');
+                window.alert('Hey! you are Successfully Logged In to Clinic-on-click');
 
                 history.push('/')
              }else{
@@ -49,7 +49,7 @@ function Signin({setIsAuthorized}) {
                 
 
                     <div className="main_display_form">
-                    <hr/><h1 style={{ textAlign: 'center' }}>DigiHeal Administration</h1><hr/>
+                    <hr/><h1 style={{ textAlign: 'center' }}>Clinic-on-click Administration</h1><hr/>
                         <h2 style={{ textAlign: 'center' }}>Admin Login</h2>
 
                         <div className="row mb-3">
