@@ -1,0 +1,20 @@
+.blood-block{
+    background-color:rgb(1, 59, 45);
+    border-radius: 10px;
+}
+.bank-img{
+   display: flex;
+   justify-content: center;
+}
+.bank-desc{
+    background-color: beige;
+    display: flex;
+    justify-content: left;
+}
+h1{
+   margin: 20px;
+}
+
+p{
+    margin: 20px;
+}
