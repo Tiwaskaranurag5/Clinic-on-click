@@ -27,7 +27,7 @@ function Signin({setIsAuthorized}) {
             if(result.status === 'success'){
                 console.log(result.status);
                 console.log(result.data);
-                sessionStorage.setItem("admin",JSON.stringify(response.data));
+                localStorage.setItem("admin",JSON.stringify(response.data));
                 setIsAuthorized(true)
                 window.alert('Hey! you are Successfully Logged In to DigiHeal');
 

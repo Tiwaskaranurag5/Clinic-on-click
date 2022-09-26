@@ -115,6 +115,7 @@ function DocSignUp() {
                             // console.log(response.status);
                             // console.log(response.data);
                             window.alert('YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT DIGIHEAL !');
+                            history.push("/docsignin")
                         }
                     })
                     

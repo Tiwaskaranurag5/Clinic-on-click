@@ -7,7 +7,7 @@ function Settings() {
     
     const [p_desc, setP_desc] = useState('');
     
-    var data = sessionStorage.getItem('credentials')
+    var data = localStorage.getItem('credentials')
     var patient = JSON.parse(data);
 
     const patientSignup = (e) =>{

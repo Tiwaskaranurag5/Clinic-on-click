@@ -11,7 +11,7 @@ function DoctorAppointments() {
         allDoctorAppointments();
     }, [])
 
-    var cred = sessionStorage.getItem('DocCreds')
+    var cred = localStorage.getItem('DocCreds')
     var doctor = JSON.parse(cred);
     var allDoctorAppointments = () => {
         axios.get(url + '/doctor/appointmentsofdoctor/' + doctor.docId).then((response) => {

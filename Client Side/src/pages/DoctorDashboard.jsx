@@ -10,14 +10,14 @@ import ChangeDocPassUsingOld from './ChangeDocPassUsingOld';
 
 function DoctorDashboard({setIsdrAuthorized}) {
     const history= useHistory()
-    var cred = sessionStorage.getItem('DocCreds');
+    var cred = localStorage.getItem('DocCreds');
     var doctor = JSON.parse(cred);
         var logOut = () =>{
             if(window.confirm('Do you really want to log out ?')){
                 axios.get(url + '/doctor/logout/' + doctor.docId).then((response) => {
                     const result = response.data;
                     if(result.status === 'success'){
-                        sessionStorage.clear();
+                        localStorage.clear();
                         setIsdrAuthorized(false)
                         history.push('/docsignin');
                     }

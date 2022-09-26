@@ -14,7 +14,7 @@ function ViewDocInfo() {
 
     const history = useHistory()
     
-    var cred = sessionStorage.getItem('DocCreds');
+    var cred = localStorage.getItem('DocCreds');
     var doctor = JSON.parse(cred);
 
     const updateDocInfo =(e)=>{

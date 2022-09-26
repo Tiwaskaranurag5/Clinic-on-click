@@ -30,17 +30,17 @@ function SideBar({authorized,setIsAuthorized}) {
               {/* <Route  path='/'>
                 <Redirect to ='/welcome' />
               </Route> */}
-              <Route path='/welcome'component={Welcome} />
-              <Route path='/home' component={()=>{return <Home enablePersistence={true} />}} />
-              <Route path='/blood' component={BloodBank} />
-              <Route path='/bloodsearchresults' component={BloodBankSearch}/>
-              <Route path='/docSignUp' component={DocSignUp} />
-              <Route path='/setting' component={Settings}/>
+              <Route  path='/client/home'component={Welcome} />
+              <Route  path='/client/speciality' component={()=>{return <Home enablePersistence={true} />}} />
+              <Route  path='/client/blood' component={BloodBank} />
+              <Route  path='/client/bloodsearchresults' component={BloodBankSearch}/>
+              <Route  path='/client/docSignUp' component={DocSignUp} />
+              <Route  path='/client/setting' component={Settings}/>
               {/* <Route path='/docBySpec' exact component={DoctorsBySpeciality} /> */}
-              <Route path='/docBySpec/:id' enablePersistence={true} component={DoctorsBySpeciality} />
-              <Route path='/appointment/:id' component={BookAppointment} />
-              <Route path='/confirm' component={AppointmentConfirmation} />
-              <Route path='/patientAppointment' component={ViewPatientAppointments} />
+              <Route  path='/client/docBySpec/:id' enablePersistence={true} component={DoctorsBySpeciality} />
+              <Route  path='/client/appointment/:id' component={BookAppointment} />
+              <Route path='/client/confirm' component={AppointmentConfirmation} />
+              <Route  path='/client/patientAppointment' component={ViewPatientAppointments} />
 
               {/* <Route path='/docBySpec' component={} /> */}
                {/* <Route path='/signin' component={Signin} /> */}

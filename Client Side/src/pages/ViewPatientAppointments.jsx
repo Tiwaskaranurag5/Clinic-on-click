@@ -8,7 +8,7 @@ function ViewPatientAppointments() {
 
     const [patientAppointments, setpatientAppointments] = useState([])
 
-    var x = sessionStorage.getItem('credentials')
+    var x = localStorage.getItem('credentials')
     var cred = JSON.parse(x);
 
     useEffect(() => {

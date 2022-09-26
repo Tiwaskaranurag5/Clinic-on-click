@@ -4,6 +4,7 @@ import { useState } from 'react'
 import axios from 'axios';
 import { url } from './../commons/constants';
 import { Link, useHistory, Redirect } from 'react-router-dom';
+import Toastify from 'toastify-js'
 
 
 
@@ -29,20 +30,46 @@ function Signin({ setIsAuthorized }) {
             try {
                 axios.post(url + '/patient/authenticate', data).then((response) => {
                     // response.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+                    console.log(response.data)
                     const result = response.data;
                     console.log(result.data);
                     if (result.status === 'success') {
                         console.log(result.status);
                         console.log(result.data);
-                        sessionStorage.setItem('credentials', JSON.stringify(result.data))
+                        localStorage.setItem('credentials', JSON.stringify(result.data))
                         setIsAuthorized(true)
-                        window.alert('Hey! you are Successfully Logged In to DigiHeal');
-                        history.push('/')
-                    } else {
-                        window.alert('Registeration Failed..');
+                        // window.alert('Hey! you are Successfully Logged In to DigiHeal');
+                        
+                        Toastify({
+                                text: "login successfully",
+                                className: "info",
+                                offset: {
+                                        x: 700, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                        y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                      },
+                                    style: {
+                                          background: "linear-gradient(to right, #24933D, #24933D)",
+                                        }
+                                      }).showToast();
+                                    history.push('/')
+                    } 
+                    else {
+                        console.log("something wrong")
                     }
 
-                });
+                }).catch((res)=>{if(res.data===""){
+                    console.log("error in response")
+                }else{Toastify({
+                    text: "Invalid Email or Password",
+                    className: "info",
+                    offset: {
+                            x: 500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast()}});
             } catch (error) {
                 console.log(error)
             }

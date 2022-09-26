@@ -23,7 +23,7 @@ function ChangeDocPassUsingOld() {
         }else if(confirmNewPass !== newPassword){
             alert('Password Does not match')
         }else{
-            var cred = sessionStorage.getItem('DocCreds');
+            var cred = localStorage.getItem('DocCreds');
             var doctor = JSON.parse(cred);
 
             const data = new FormData()

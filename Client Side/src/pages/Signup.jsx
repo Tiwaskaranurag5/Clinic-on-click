@@ -4,6 +4,7 @@ import Axios from 'axios'
 import {useState} from 'react'
 import {url} from '../commons/constants';
 // import './Signup-validation.js'
+import Toastify from 'toastify-js'
 
 // import Signin from './pages/Signin';
 import { Link } from 'react-router-dom';
@@ -27,12 +28,33 @@ function Signup() {
     //Axios.defaults.withCredentials = true
     const patientSignup = (e) =>{
         if (p_name.length === 0) {
-            alert('please enter Full Name')
+            Toastify({
+                text: "Please enter your name",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 215 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right,  #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } else if (p_gender.length === 0) {
             alert('please select gender')
           } 
          else if (p_phone.length !== 10) {
-            alert('please enter 10 digit phone number')
+            // alert('please enter 10 digit phone number')
+            Toastify({
+                text: "please enter 10 digit phone number",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 315 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } 
          else if (email.length === 0) {
             alert('Email id cannot be empty')

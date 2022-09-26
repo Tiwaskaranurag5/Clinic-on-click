@@ -15,7 +15,7 @@ function Navbar({authorized, setIsAuthorized}) {
     const history = useHistory();
     var logout = () => {
         if(window.confirm('Do you really want to log out ?')){
-            sessionStorage.clear();
+            localStorage.clear();
             setIsAuthorized(false);
             history.push('/');
         }

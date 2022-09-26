@@ -11,7 +11,7 @@ function AppointmentConfirmation(props) {
     const [doctorDetails, setdoctorDetails] = useState([]);
     var history = useHistory();
 
-    var data = sessionStorage.getItem('credentials');
+    var data = localStorage.getItem('credentials');
     var patient = JSON.parse(data);
     const { search } = useLocation()
     const queryvalues = queryString.parse(search)

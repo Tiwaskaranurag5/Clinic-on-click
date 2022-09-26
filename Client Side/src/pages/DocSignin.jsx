@@ -37,7 +37,7 @@ function DocSignin({ setIsdrAuthorized }) {
                     if (result.status === 'success') {
                         console.log(result.status);
                         console.log(result.data);
-                        sessionStorage.setItem('DocCreds', JSON.stringify(result.data))
+                        localStorage.setItem('DocCreds', JSON.stringify(result.data))
                         // window.location = '/docsignin';
                         setIsdrAuthorized(true)
                         window.alert('Hey! you are Successfully Logged In to DigiHeal');
