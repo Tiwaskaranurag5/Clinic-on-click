@@ -35,7 +35,7 @@ function Welcome() {
               className="card-title"
               style={{ textAlign: "center", color: "rgb(1, 59, 45)"  ,paddingTop:'25px' }}
             >
-              DigiHeal - online doctor consultancy
+              Clinic-on-click (online doctor booking appointment sytem)
             </h1>
             <h5
               className="card-title"
@@ -49,7 +49,7 @@ function Welcome() {
             </div>
             <p className="para1">
             Experienced and verified doctors from every possible specialty
-            on-board, Digiheal empowers patients to consult with
+            on-board, Clinic-on-click empowers patients to consult with
             doctors from the comfort and safety
             of their homes. Online doctor consultation is done via video
             conferencing, telephonic conversations or online chats.
@@ -201,7 +201,7 @@ function Welcome() {
             </div>
             <p className="para1">
               We are digital healthcare platform with the core belief that
-              ‘Expertise is for Everyone’. We combine Digiheal’s legacy of
+              ‘Expertise is for Everyone’. We combine Clinic-on-click’s legacy of
               clinical excellence, affordable cost, and forward-looking research
               with cutting-edge technology to make the best quality healthcare
               easily accessible to every Indian, online.
@@ -210,7 +210,7 @@ function Welcome() {
               <b>What we do?</b>
             </div>
             <p className="para1">
-              With the launch of DigiHeal, On a single online platform, you can
+              With the launch of Clinic-on-click, On a single online platform, you can
               avail an entire gamut of services, like online doctor
               consultation. We also offer expert-curated solutions for
               COVID-care and chronic condition management.
@@ -219,11 +219,11 @@ function Welcome() {
         </div>
         <footer>
           <div className="card-body text-dark bg-light mb-3">
-          DigiHeal project is created by SunBeam-Pune PG-DAC May-2021 batch students :
-            Sunay Tamboli, Abhijeet Thorat, Sheersh Singh and Omkar Gaikar
-            <br />Note that DigiHeal project is solely for educational purpose. It doesnot serve any commercial purpose.
+          Clinic-on-click  project is created by IACSD-Akurdi PG-DAC Mar-22 batch students :
+            Anubhav Pareek,Anurag Tiwaskar
+            <br />Note that Clinic-on-click project is solely for educational purpose. It doesnot serve any commercial purpose.
             <br />
-             contact us at email: digiheal4u@gmail.com
+             contact us at email:
           </div>
         </footer>
       </div>

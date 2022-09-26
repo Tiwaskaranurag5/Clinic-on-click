@@ -116,7 +116,7 @@ function DocSignUp() {
                     if (result.status === "success") {
                         console.log(response.status);
                         console.log(response.data);
-                        window.alert('Hey! you are Successfully registered at DigiHeal');
+                        window.alert('Hey! you are Successfully registered at Clinic-on-click');
                         history.push('/')
                     } else {
                         window.alert('Registeration Failed..')

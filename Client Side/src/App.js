@@ -19,10 +19,16 @@ import ForgotPassword from './components/ForgotPassword';
 
 function App() {
   const [isAuthorized, setIsAuthorized] = useState(false)
-useEffect(()=>{
-  const r = sessionStorage.getItem('credentials')
-  if(r!=null){
+  const [isdrAuthorized, setIsdrAuthorized] = useState(false)
+   
+ useEffect(()=>{
+  const p = localStorage.getItem('credentials')
+  const d = localStorage.getItem('DocCreds')
+  if(p!=null){
     setIsAuthorized(true);
+  }
+  if(d!=null){
+    setIsdrAuthorized(true);
   }
 },[])
   return (
@@ -31,19 +37,19 @@ useEffect(()=>{
       <Router>
         <Switch>
           <div className="container">
-            <Route path='/' render={() => {
+            <Route  path='/' render={() => {
               return (isAuthorized ? <SideBar authorized={isAuthorized} setIsAuthorized={setIsAuthorized} /> :
                 <Signin setIsAuthorized={setIsAuthorized} />)
             }} />
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/docsignin' render={() => {
-              return (isAuthorized ? <DoctorDashboard authorized={isAuthorized} setIsAuthorized={setIsAuthorized} /> :
-                <DocSignin setIsAuthorized={setIsAuthorized} />)
+              return (isdrAuthorized ? <DoctorDashboard authorized={isdrAuthorized} setIsdrAuthorized={setIsdrAuthorized} /> :
+                <DocSignin setIsdrAuthorized={setIsdrAuthorized} />)
             }} />
             <Route exact path='/forgotpassword' component={ForgotPassword} />
             <Route exact path='/docsignup' component={DocSignUp} />
-            {/* <Route path='/docdashboard' component={()=>{return <DoctorDashboard authorized={isAuthorized}/>}} />
-        */}
+            {/* <Route path='/docdashboard' component={()=>{return <DoctorDashboard authorized={isAuthorized}/>}} /> */}
+       
 
           </div>
         </Switch>

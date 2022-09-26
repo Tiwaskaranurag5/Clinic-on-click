@@ -27,7 +27,7 @@ function Signin({setIsAuthorized}) {
             if(result.status === 'success'){
                 console.log(result.status);
                 console.log(result.data);
-                sessionStorage.setItem("admin",JSON.stringify(response.data));
+                localStorage.setItem("admin",JSON.stringify(response.data));
                 setIsAuthorized(true)
                 window.alert('Hey! you are Successfully Logged In to DigiHeal');
 
@@ -73,8 +73,9 @@ function Signin({setIsAuthorized}) {
 
                         <div style={{ textAlign: 'center' }}>
                             <button type="submit" class="btn btn-success" onClick={logIn}>Log in</button><br/>
-
-                            <button type="button" class="btn btn-secondary transparent-btn">Forget Password</button>
+                            <Link to='/forgotpassword'>
+                                <button type="button" class="btn btn-secondary transparent-btn" >Forgot Password ?</button>
+                            </Link>
 
                         </div>
 

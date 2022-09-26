@@ -10,21 +10,27 @@ import { url } from './../commons/constants';
 
 
 
+
 function Navbar({ setIsAuthorized }) {
     // const [sidebar, setSidebar] = useState(false)
     // let history = useHistory();
     const history = useHistory()
 
-    var x = sessionStorage.getItem('credentials')
+    var x = localStorage.getItem('credentials')
     var cred = JSON.parse(x);
 
 
     var logout = () => {
-        if(window.confirm('Do you really want to log out ?')){
-            sessionStorage.clear();
+        // if()//(//window.confirm('Do you really want to log out ?'))
+        // {
+        //     localStorage.clear();
+        //     setIsAuthorized(false);
+        //     history.push('/');
+        // }
+        localStorage.clear();
             setIsAuthorized(false);
             history.push('/');
-        }
+       
     }
     return (
         <>
@@ -32,7 +38,7 @@ function Navbar({ setIsAuthorized }) {
                 <header class="header" id="header">
                     {/* <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> */}
                     <Link className="navbar-brand" to="/welcome">
-                        <img src="\images\logo_DigiHeal.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />
+                        <img src="\images\COC_logo.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />
                     </Link>
                     <p style={{ marginLeft: "auto", marginRight: "11px", marginTop: "15px", fontSize: '20px' }}>Hello, {cred.patName}</p>
                     <div class="header_img"> <img src="\images\person-profile.png" alt={cred.patName} /> </div>
@@ -42,7 +48,7 @@ function Navbar({ setIsAuthorized }) {
                         <div>
                             <Link to="/welcome" class="nav_logo">
                                 <i class='bx bx-layer nav_logo-icon'></i>
-                                <span class="nav_logo-name"><h4>DigiHeal</h4></span>
+                                <span class="nav_logo-name"><h4 >COC</h4></span>
                             </Link>
                             <div class="nav_list">
 

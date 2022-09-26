@@ -4,3 +4,10 @@
     
     justify-content: center;
 }
+
+
+  .required:after {
+   font-size:22px;
+    content:" *";
+    color: red;
+  }

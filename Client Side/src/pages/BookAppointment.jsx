@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { url } from '../commons/constants';
 import { Link } from 'react-router-dom';
 import AppointmentConfirmation from './AppointmentConfirmation';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 
 function BookAppointment(props) {
@@ -13,7 +15,7 @@ function BookAppointment(props) {
   const [visibleSlots, setVisibleSlots] = useState(false);
   var bookSlotIdArray = [];
   //Session Storage variables
-  var patientInfo = sessionStorage.getItem('credentials')
+  var patientInfo = localStorage.getItem('credentials')
   var pat = JSON.parse(patientInfo)
   //Console for Checking
   //Console.log(patientInfo)
@@ -35,8 +37,19 @@ function BookAppointment(props) {
       if (result.status === 'success') {
         setbookedAppointments(result.data)
         setVisibleSlots(true)
-      } else {
-        alert("Error fetching Doctor's slot Data...!!!")
+      } else { 
+        Toastify({
+        text: "Error fetching Doctor's slot Data...!!!",
+        className: "info",
+        offset: {
+                x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+              },
+            style: {
+                  background: "linear-gradient(to right, #FF0000, #FF0000)",
+                }
+              }).showToast();
+        //alert("Error fetching Doctor's slot Data...!!!")
       }
     })
   }
@@ -48,7 +61,18 @@ function BookAppointment(props) {
       if (result.status === 'success') {
         setgetSlots(result.data)
       } else {
-        alert("Error fetching All Slot Data !!!")
+        Toastify({
+          text: "Error fetching All Slot Data !!",
+          className: "info",
+          offset: {
+                  x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                  y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                },
+              style: {
+                    background: "linear-gradient(to right, #FF0000, #FF0000)",
+                  }
+                }).showToast();
+        //alert("Error fetching All Slot Data !!!")
       }
     })
   }

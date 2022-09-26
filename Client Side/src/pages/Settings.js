@@ -2,12 +2,14 @@ import React from 'react'
 import Axios from 'axios'
 import {useState} from 'react'
 import {url} from '../commons/constants';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 function Settings() {
 
     
     const [p_desc, setP_desc] = useState('');
     
-    var data = sessionStorage.getItem('credentials')
+    var data = localStorage.getItem('credentials')
     var patient = JSON.parse(data);
 
     const patientSignup = (e) =>{
@@ -20,8 +22,23 @@ function Settings() {
                 if(result.status == "success"){
                     console.log(response.status);
                     console.log(response.data);
-                    window.alert('Data Updated Successfully . . .');
-                    // window.location = '/';
+                    Toastify({
+                        text: "Data Updated Successfully",
+                        className: "info",
+                        offset: {
+                                x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                y:5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                              },
+                            style: {
+                                  background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                }
+                              }).showToast();
+
+
+
+
+                    //window.alert('Data Updated Successfully . . .');
+                     window.location = '/';
                 }
             })
             

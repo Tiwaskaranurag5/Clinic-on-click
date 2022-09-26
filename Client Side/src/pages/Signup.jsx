@@ -3,6 +3,8 @@ import './Signup.css'
 import Axios from 'axios'
 import {useState} from 'react'
 import {url} from '../commons/constants';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 // import './Signup-validation.js'
 
 // import Signin from './pages/Signin';
@@ -27,25 +29,106 @@ function Signup() {
     //Axios.defaults.withCredentials = true
     const patientSignup = (e) =>{
         if (p_name.length === 0) {
-            alert('please enter Full Name')
+            Toastify({
+                text: "please enter name",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 78 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } else if (p_gender.length === 0) {
-            alert('please select gender')
+            Toastify({
+                text: "please select gender",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:130 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } 
          else if (p_phone.length !== 10) {
-            alert('please enter 10 digit phone number')
+            Toastify({
+                text: "please enter 10 digit phone number",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:200 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } 
          else if (email.length === 0) {
-            alert('Email id cannot be empty')
+            Toastify({
+                text: "Email id cannot be empty",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:260 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } else if(!validEmail.test(email)){
-              alert('Enter a Valid Email Id')
+            Toastify({
+                text: "Please enter valid email id",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:260 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           }
          else if (password.length === 0) {
-            alert('please enter password')
+            Toastify({
+                text: "Password cannot be empty",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:320 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } else if(!validPassword.test(password)){
-              alert(' password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space')
+            Toastify({
+                text: " password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:320 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+             
           }
          else if (p_dob.length === 0) {
-            alert('please select your Date of birth')
+            Toastify({
+                text: " Please select date of birth",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:385 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
           } 
           else {
                 e.preventDefault()
@@ -64,10 +147,31 @@ function Signup() {
                         if(result.status == "success"){
                             console.log(response.status);
                             console.log(response.data);
-                            window.alert('. . . CONGRATS ! YOU ARE SUCCESSFULLY REGISTERED AS PATIENT AT DIGIHEAL  . . .');
+                            Toastify({
+                                text: "You have successfully registered as patient",
+                                className: "info",
+                                offset: {
+                                        x:800, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                        y:-20 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                      },
+                                    style: {
+                                          background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                        }
+                                      }).showToast();
+                            //window.alert('. . . CONGRATS ! YOU ARE SUCCESSFULLY REGISTERED AS PATIENT AT Clinic-on-click  . . .');
                             window.location = '/';
                         }else{
-                            window.alert('Wrong Credentials..')
+                            Toastify({
+                                text: " This email is already registered",
+                                className: "info",
+                                offset: {
+                                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                        y:260 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                      },
+                                    style: {
+                                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                                        }
+                                      }).showToast();
                         }
                     })
                     
@@ -81,10 +185,11 @@ function Signup() {
         <>
             <div className="container" >
                 <div className="row">
-                    <div className="col-sm-12 col-sm-12 col-md-8 col-lg-5">
+                    <div className="col-sm-12 col-sm-12 col-md-auto col-lg-5 ">
+                        <h1 style={{marginBottom:"80px"}}> </h1>
                         <div>
-                        <h1 style={{ textAlign: 'center' , fontSize:'70px'}}>
-                            DigiHeal
+                        <h1 style={{ textAlign: 'center' , fontSize:'50px', marginBottom:"50px"}}>
+                            Clinic-on-click
                         </h1>
                         <h3 style={{ textAlign: 'center' }}>online Doctor Consultancy</h3>
                         </div>
@@ -101,18 +206,18 @@ function Signup() {
                         
         
                     <div className="col-xs-12 col-sm-12 col-md-4 col-lg-6" >
-                    <div style={{ textAlign: 'right' , marginBottom:"20px"}}>
+                    <div style={{ textAlign: 'right' , marginBottom:"40px",marginRight:"80px"}}>
                             <Link to="/">
                             <button type="button" class="btn btn-warning">Go Back to Login</button>
                             </Link>
                         </div>     
-                        <h1 style={{ textAlign: 'center' }}>Sign up at DigiHeal</h1>
-                        <h5 style={{ textAlign: 'center' }}>Just fill up some details </h5>
-                        <h5 style={{ textAlign: 'center' }}>And instantly Book appointment with verified Doctors !</h5>
+                        <h2 style={{ textAlign: 'right',marginLeft:"10px"}}>Sign up at Clinic-on-click</h2>
+                        <h5 style={{ textAlign: 'center',marginLeft:"120px" }}>Just fill up some details </h5>
+                        <h5 style={{ textAlign: 'center',marginLeft:"120px" }}>And instantly Book appointment with verified Doctors !</h5>
                         <br />
                         
                         <div className="row mb-3">
-                            <label htmlFor="name" className="col-xs-3 col-sm-3 col-form-label">Full Name </label>
+                            <label htmlFor="name" className="col-xs-3 col-sm-3 col-form-label required">Full Name </label>
                             <div class="col-sm-9">
                                 <input type="text" name="name" className="form-control" id="name" placeholder='Enter your full name' 
                                 onChange={(e) => {
@@ -124,7 +229,7 @@ function Signup() {
 
                         <div className="row mb-3">
 
-                            <legend className="col-xs-3 col-form-label col-sm-3 pt-0">Gender</legend>
+                            <legend className="col-xs-3 col-form-label col-sm-3 pt-0 required">Gender</legend>
                             <div class="col-xs-9 col-sm-9">
                             &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="gender" className="form-check-input" id="gender" value="male"  onChange={(e) => {
                                     setP_gender(e.target.value)
@@ -143,7 +248,7 @@ function Signup() {
 
 
                         <div className="row mb-3">
-                            <label htmlFor="phone" className="col-xs-3 col-sm-3 col-form-label">Phone </label>
+                            <label htmlFor="phone" className="col-xs-3 col-sm-3 col-form-label required">Phone </label>
                             <div class="col-xs-9 col-sm-9">
                                 <input type="text" name="phone" className="form-control" id="phone" placeholder='Enter your Phone number' onChange={(e) => {
                                     setP_phone(e.target.value)
@@ -152,7 +257,7 @@ function Signup() {
                         </div>
 
                         <div className="row mb-3">
-                            <label htmlFor="email" className="col-xs-3 col-sm-3 col-form-label">Email</label>
+                            <label htmlFor="email" className="col-xs-3 col-sm-3 col-form-label required">Email</label>
                             <div class="col-xs-9 col-sm-9">
                                 <input type="email" name="email" className="form-control" id="email" placeholder='Enter your email-id' 
                                 onChange={(e) => {
@@ -161,7 +266,7 @@ function Signup() {
                             </div>
                         </div>
                         <div className="row mb-3">
-                            <label htmlFor="password" className="col-xs-3 col-sm-3 col-form-label">Password</label>
+                            <label htmlFor="password" className="col-xs-3 col-sm-3 col-form-label required ">Password</label>
                             <div class="col-xs-9 col-sm-9">
                                 <input type="password" name="password" className="form-control" id="password" placeholder='Enter new password'
                                  onChange={(e) => {
@@ -172,7 +277,7 @@ function Signup() {
 
                      
                         <div className="row mb-3">
-                            <label htmlFor="dob" className="col-xs-3 col-sm-3 col-form-label">Date of Birth</label>
+                            <label htmlFor="dob" className="col-xs-3 col-sm-3 col-form-label required">Date of Birth</label>
                             <div class="col-xs-9 col-sm-9">
                                 <input type="date" name="dob" className="form-control" id="dob"  onChange={(e) => {
                                     setP_dob(e.target.value)
@@ -182,7 +287,7 @@ function Signup() {
 
                     
                         <div className="row mb-3">
-                            <label htmlFor="desc" className="col-xs-3 col-sm-3 col-form-label">Description</label>
+                            <label htmlFor="desc" className="col-xs-3 col-sm-3 col-form-label">Description </label>
                             <div class="col-xs-9 col-sm-9">
                             <textarea className="form-control" id="desc" rows="3" placeholder="Enter your description." onChange={(e) => {
                                 setP_desc(e.target.value)

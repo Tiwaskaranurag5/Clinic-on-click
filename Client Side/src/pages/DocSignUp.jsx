@@ -5,6 +5,8 @@ import Axios from 'axios';
 import axios from 'axios';
 import { url } from './../commons/constants';
 import { useHistory, Link } from 'react-router-dom';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function DocSignUp() {
 
@@ -52,41 +54,186 @@ function DocSignUp() {
     // Axios.defaults.withCredentials = true
     const docRegister = (e) => {
         if (d_name.length === 0) {
-            alert('please enter Name')
+            Toastify({
+                text: " please enter Name",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            // alert('please enter Name')
           } 
           else if (sp_id === 0) {
-            alert('please select Speciality')
+            Toastify({
+                text: " please select Speciality",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            // alert('please select Speciality')
           } 
           else if (d_city.length === 0) {
-            alert('please enter City')
+            Toastify({
+                text: " please enter City",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           // alert('please enter City')
           } 
           else if (d_phone.length !== 10) {
-            alert('phone number should be of 10 digits')
+            Toastify({
+                text: "phone number should be of 10 digits",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            //alert('phone number should be of 10 digits')
           } 
           else if (d_exp === 0) {
-            alert('please enter Experience (in years)')
+            Toastify({
+                text: "please enter Experience (in years)",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            //alert('please enter Experience (in years)')
           } 
           else if (d_registeration_no.length === 0) {
-            alert('please enter Registration number')
+            Toastify({
+                text: "please enter Registration number",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            //alert('please enter Registration number')
           } 
           else if (d_verification_doc === undefined) {
-            alert('please upload verification document')
+            Toastify({
+                text: "please upload verification document",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           // alert('please upload verification document')
           } 
           else if (d_profile_pic === undefined) {
-            alert('please upload profile pic')
+            Toastify({
+                text: "please upload profile pic",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            //alert('please upload profile pic')
           } 
           else if (d_fees.length === 0) {
-            alert('please enter fees')
+            Toastify({
+                text: "please enter fees",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            
+            //alert('please enter fees')
           } 
           else if (email.length === 0) {
-            alert('Email field cannot be empty')
+            Toastify({
+                text: "Email field cannot be empty",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           
+            // alert('Email field cannot be empty')
           } else if (!validEmail.test(email)){
-              alert('Please Enter a valid Email')
+           
+            Toastify({
+                text: "Please Enter a valid Email",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast(); //   alert('Please Enter a valid Email')
           }
           else if (password.length === 0) {
-            alert('Password Field cannot be Empty.')
+            Toastify({
+                text: "Password Field cannot be Empty.",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+            //alert('Password Field cannot be Empty.')
           } else if(!validPassword.test(password)){
-              alert(' password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space')
+            Toastify({
+                text: "password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space.",
+                className: "info",
+                offset: {
+                        x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+              //alert(' password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space')
           }
           
           else {
@@ -114,7 +261,19 @@ function DocSignUp() {
                         if(result.status == "success"){
                             // console.log(response.status);
                             // console.log(response.data);
-                            window.alert('YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT DIGIHEAL !');
+                            Toastify({
+                              text: " YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT Clinic-on-click!",
+                              className: "info",
+                              offset: {
+                                      x:600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                      y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                    },
+                                  style: {
+                                        background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                      }
+                                    }).showToast();
+
+                            // window.alert('YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT  Clinic-on-click!');
                         }
                     })
                     
@@ -219,7 +378,7 @@ function DocSignUp() {
                         </div>
                         <div className="col-md-6">
                             <div classNameName="row" style={{ borderStyle: "groove", borderColor: "#CED4DA", opacity: "0.5", borderRadius: "5px", padding: "10px" }}>
-                                <label HtmlFor="inputEmail4" className="form-label">Upload Profile Pic</label>
+                                <label HtmlFor="inputEmail4" className="form-label">Upload Profile Pic-size must be less than 1MB</label>
                                 {/* <label for="exampleFormControlFile1">Example file input</label> */}
                                 
                                 <input type="file" className="form-control-file" onChange={(e) => {
@@ -239,7 +398,7 @@ function DocSignUp() {
                         </div>
                         <br /> <br />
                         <div className="col-12">
-                            <button type="button" className="btn btn-primary" onClick={docRegister}>Register at DigiHeal</button>
+                            <button type="button" className="btn btn-primary" onClick={docRegister}>Register at Clinic-on-click</button>
                         </div>
                     </div>
                 </form>

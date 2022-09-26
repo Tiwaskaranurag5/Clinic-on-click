@@ -3,6 +3,8 @@ import React from 'react'
 import { useState } from 'react';
 import { useHistory,Link } from 'react-router-dom';
 import { url } from '../commons/constants';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function ChangeDocPassUsingOld() {
     const [oldPassword, setOldPassword] = useState('')
@@ -15,15 +17,70 @@ function ChangeDocPassUsingOld() {
     const changePassword = ()=>{
 
         if(oldPassword.length === 0){
-            alert('Please enter your Old password ')
+            Toastify({
+                text: " Please enter old password",
+                className: "info",
+                offset: {
+                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:245 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right,#FF0000, #FF0000)",
+                        }
+                      }).showToast();
+
         }else if(newPassword.length === 0){
-            alert('new password cannot be Empty')
+            Toastify({
+                text: " Please enter new password",
+                className: "info",
+                offset: {
+                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:330 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+
+
+        
+          //  alert('new password cannot be Empty')
         }else if(!validPassword.test(newPassword)){
-            alert(' password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space');
+            Toastify({
+                text: " password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space'",
+                className: "info",
+                offset: {
+                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:330 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           
+           
+           
+           
+           
+           
+          // alert(' password must contain 1 number (0-9)\n password must contain 1 uppercase letters \n password must contain 1 lowercase letters \n password must contain 1 non-alpha numeric number (#?!@$%^&*-) \n password must be of more than 8 characters with no space');
         }else if(confirmNewPass !== newPassword){
-            alert('Password Does not match')
+            Toastify({
+                text: " Password Does not match",
+                className: "info",
+                offset: {
+                        x:200, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:415 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+
+           
+            // alert('Password Does not match')
         }else{
-            var cred = sessionStorage.getItem('DocCreds');
+            var cred = localStorage.getItem('DocCreds');
             var doctor = JSON.parse(cred);
 
             const data = new FormData()
@@ -35,7 +92,18 @@ function ChangeDocPassUsingOld() {
 
             axios.put(url +'/doctor/editpassword',data).then((response)=>{
                 if(response.data.status==='success'){
-                    alert("password updated successfully")
+                    Toastify({
+                        text: "password updated successfully",
+                        className: "info",
+                        offset: {
+                                x:500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                              },
+                            style: {
+                                  background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                }
+                              }).showToast();
+                    //alert("password updated successfully")
                     history.push('/viewProfile')
                 }else{
                     alert('Failed updating password')

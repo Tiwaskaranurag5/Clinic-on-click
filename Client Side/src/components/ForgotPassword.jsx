@@ -3,6 +3,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import { url } from '../commons/constants';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 function ForgotPassword() {
     const history = useHistory()
 
@@ -15,13 +17,27 @@ function ForgotPassword() {
     const sendOTP = () => {
         const emailform = new FormData()
         emailform.append('useremail',email)
-        axios.post(url + '/email', emailform).then((response) => {
+        const body ={
+            "email":email
+        }
+        axios.post(url + '/email/forgot', body).then((response) => {
             if (response.data.status === 'success') {
                 setEncOTP(response.data.data)
                 setIsOtpSent(true)
             } else {
+                Toastify({
+                    text: "Enter correct mail id",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
                 // console.log(response.data.data)
-                window.alert("email not found in record")
+               // window.alert("email not found in record")
             }
         })
     }
@@ -29,16 +45,61 @@ function ForgotPassword() {
         const otp = (parseInt(encOTP) + 31) / 31;
         console.log('otp '+otp)
         console.log('userOtp '+userOtp)
-        if (userOtp.length !== 4) {
-            alert('OTP should be of 4-digits which is sent on your email')
-        } if(otp != userOtp){
+        // if (userOtp.length !== 4) {
+        //     Toastify({
+        //         text: "OTP should be of 4-digits which is sent on your email",
+        //         className: "info",
+        //         offset: {
+        //                 x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        //                 y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        //               },
+        //             style: {
+        //                   background: "linear-gradient(to right, #FF0000, #FF0000)",
+        //                 }
+        //               }).showToast();
+        //    // alert('OTP should be of 4-digits which is sent on your email')
+        //             }
+         if(otp != userOtp){
             console.log('otp '+otp)
             console.log('userOtp '+userOtp)
-            alert('Incorrect OTP ! please enter a correct OTP')
+            Toastify({
+                text: "Incorrect OTP ! please enter a correct OTP",
+                className: "info",
+                offset: {
+                        x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           // alert('Incorrect OTP ! please enter a correct OTP')
         } else if (password.length === 0 && confirmPassword.length === 0) {
-            alert('enter a new password')
+            Toastify({
+                text: "enter a new password",
+                className: "info",
+                offset: {
+                        x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           // alert('enter a new password')
         } else if (password !== confirmPassword) {
-            alert('confirm password not matched..Re-enter the password')
+            Toastify({
+                text: "confirm password not matched..Re-enter the password",
+                className: "info",
+                offset: {
+                        x: 500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           // alert('confirm password not matched..Re-enter the password')
         } else {
             const data = new FormData();
 
@@ -47,7 +108,18 @@ function ForgotPassword() {
 
             axios.post(url + '/email/verifyotp',data).then((response) => {
                 if (response.data.status === 'success') {
-                    window.alert('Your password is reset ! please use new password to logIn now')
+                    Toastify({
+                        text: "Your password is reset ! please use new password to logIn now",
+                        className: "info",
+                        offset: {
+                                x: 500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                              },
+                            style: {
+                                  background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                }
+                              }).showToast();
+                   // window.alert('Your password is reset ! please use new password to logIn now')
                     history.push('/')
                 } else {
                     window.alert('password updatation failed')
@@ -97,7 +169,7 @@ function ForgotPassword() {
                             <div className="row mb-3">
                                 <label htmlFor="otp" className="col-sm-2 col-form-label">OTP: </label>
                                 <div class="col-sm-10">
-                                    <input type="number" className="form-control" id="otp" placeholder='Enter the received 4-digit OTP'
+                                    <input type="text" className="form-control" id="otp" placeholder='Enter the received 4-digit OTP'
                                         onChange={(e) => {
                                             setUserOtp(e.target.value)
                                         }} />

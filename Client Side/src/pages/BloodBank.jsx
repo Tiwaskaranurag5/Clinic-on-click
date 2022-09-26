@@ -7,6 +7,8 @@ import { AiFillBank, AiFillMail } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { IoMdCall } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function BloodBank() {
 
@@ -24,7 +26,18 @@ function BloodBank() {
             if (result.status === 'success') {
                 setbloodBanks(result.data);
             } else {
-                window.alert("Error Fetching Blood Bank Data ....")
+                Toastify({
+                    text: "Error Fetching Blood Bank Data ....",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+                // window.alert("Error Fetching Blood Bank Data ....")
             }
         })
     }
