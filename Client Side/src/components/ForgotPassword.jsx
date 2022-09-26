@@ -15,6 +15,21 @@ function ForgotPassword() {
     const [userOtp, setUserOtp] = useState(0);
     const [isOtpSent, setIsOtpSent] = useState(false);
     const sendOTP = () => {
+        if(email.length === 0){
+            Toastify({
+                text: "Enter mail id",
+                className: "info",
+                offset: {
+                        x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+        }else{
+       
+       
         const emailform = new FormData()
         emailform.append('useremail',email)
         const body ={
@@ -28,7 +43,7 @@ function ForgotPassword() {
                 setIsOtpSent(true)
             } else {
                 Toastify({
-                    text: "Enter correct mail id",
+                    text: "Enter correct Registered mail id",
                     className: "info",
                     offset: {
                             x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
@@ -42,6 +57,7 @@ function ForgotPassword() {
                // window.alert("email not found in record")
             }
         })
+    }
     }
     const verifyOtp = () => {
         const otp = (parseInt(encOTP) + 31) / 31;

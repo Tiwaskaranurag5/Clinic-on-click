@@ -32,7 +32,7 @@ function Specs({ items, title }) {
                 <Link to={{pathname: "/docBySpec  " , state:item.spId }} ><button className="btn btn-primary" style={{ display: "block", marginLeft: "auto", marginRight: "auto" }}>Show Doctors</button> </Link>
                 */}
 
-                <Link to={`/docBySpec/${item.spId}`} ><button className="btn btn-primary" style={{ display: "block", marginLeft: "auto", marginRight: "auto" }}>Show Doctors</button> </Link>
+                <Link to={`/client/docBySpec/${item.spId}`} ><button className="btn btn-primary" style={{ display: "block", marginLeft: "auto", marginRight: "auto" }}>Show Doctors</button> </Link>
               </div>
             </div>
           </>

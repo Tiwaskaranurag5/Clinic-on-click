@@ -111,7 +111,7 @@ function DoctorsBySpeciality(props) {
 
                                             </div>
                                             <div className="btn" style={{ textAlign: "center", backgroundColor: "#f2ffcc", marginTop: "20px", width: "100%" }}>
-                                                <Link to={`/appointment/${doct.docId}`} className=" font-weight-bold" style={{ color: "#33cc33" }}> Book Appointment</Link>
+                                                <Link to={`/client/appointment/${doct.docId}`} className=" font-weight-bold" style={{ color: "#33cc33" }}> Book Appointment</Link>
                                             </div>
                                         </div>
                                     </div>

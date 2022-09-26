@@ -67,13 +67,13 @@ function AppointmentConfirmation(props) {
                             y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
                           },
                         style: {
-                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                              background: "linear-gradient(to right, #32cd32, #32cd32)",
                             }
                           }).showToast();
 
 
                // window.alert('Appointment Booked SuccessFully !!!')
-                history.push('/patientAppointment')
+                history.push('/client/patientAppointment')
             } else {
                 Toastify({
                     text: "appointment booking failed",

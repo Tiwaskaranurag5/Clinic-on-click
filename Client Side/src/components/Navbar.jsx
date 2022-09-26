@@ -27,7 +27,7 @@ function Navbar({ setIsAuthorized }) {
             setIsAuthorized(false);
             history.push('/');
             Toastify({
-                text: " Hey! you are Successfully LogOut from  Clinic-on-click",
+                text: " Hey! you are Successfully Logout from  Clinic-on-click",
                 className: "info",
                 offset: {
                         x:500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'

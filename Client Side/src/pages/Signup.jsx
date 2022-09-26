@@ -128,8 +128,8 @@ function Signup() {
                 text: " Please select date of birth",
                 className: "info",
                 offset: {
-                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                        y:385 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                  x:800, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                  y:-20  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
