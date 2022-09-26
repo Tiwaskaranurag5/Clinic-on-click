@@ -26,6 +26,7 @@ function AppointmentConfirmation(props) {
 
         axios.get(url + '/doctor/' + queryvalues.docid).then((response) => {
             const result = response.data;
+            console.log(result.data);
             if (result.status === 'success') {
                 setdoctorDetails(result.data)
             } else {
