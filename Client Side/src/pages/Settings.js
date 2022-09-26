@@ -22,12 +22,13 @@ function Settings() {
                 if(result.status == "success"){
                     console.log(response.status);
                     console.log(response.data);
+                    window.location = '/client/home';
                     Toastify({
                         text: "Data Updated Successfully",
                         className: "info",
                         offset: {
-                                x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                                y:5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                x: 400, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                y:100  // vertical axis - can be a number or a string indicating unity. eg: '2em'
                               },
                             style: {
                                   background: "linear-gradient(to right, #32cd32, #32cd32)",
@@ -38,7 +39,6 @@ function Settings() {
 
 
                     //window.alert('Data Updated Successfully . . .');
-                     window.location = '/';
                 }
             })
             

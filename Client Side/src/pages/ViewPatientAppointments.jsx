@@ -57,7 +57,7 @@ function ViewPatientAppointments() {
                 <div class="container">
                     <h3>At this moment, No appointments are booked </h3>
                     <h5>Select a speciality to book one</h5>
-                    <Link to='/home'>
+                    <Link to='/client/speciality'>
                         <button className="btn btn-outline-dark">select a Speciality</button>
                     </Link>
                 </div>

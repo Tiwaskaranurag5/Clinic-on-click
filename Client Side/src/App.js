@@ -48,6 +48,7 @@ function App() {
             
 
           <Route exact path="/"><Redirect to="/client"/></Route>
+          
             <Route path='/client' render={() => {
 
               return (isAuthorized ? <SideBar authorized={isAuthorized} setIsAuthorized={setIsAuthorized} /> :

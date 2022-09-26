@@ -22,7 +22,7 @@ function AddSpeciality() {
             console.log(response.status)
             console.log(response.data)
             window.alert('New Speciality is successfully added !')
-            history.push("/speciality")
+            history.push("/specialities")
             // if(response.status === 'success'){
             // }else{
             //     window.alert('problem in adding new speciality !')

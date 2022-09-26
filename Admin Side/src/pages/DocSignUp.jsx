@@ -117,7 +117,7 @@ function DocSignUp() {
                         console.log(response.status);
                         console.log(response.data);
                         window.alert('Hey! you are Successfully registered at Clinic-on-click');
-                        history.push('/')
+                        history.push('/doctors')
                     } else {
                         window.alert('Registeration Failed..')
                         history.push('/addDoctor')
@@ -203,7 +203,7 @@ function DocSignUp() {
                         </div>
                         <div className="form-group">
                             <label HtmlFor="exampleFormControlTextarea1">Description</label>
-                            <textarea className="form-control" rows="3" cols="55" placeholder="Enter some description about doctor" id="exampleFormControlTextarea1" rows="3" onChange={(e) => {
+                            <textarea className="form-control" rows="3" cols="55" placeholder="Enter some description about doctor" id="exampleFormControlTextarea1"  onChange={(e) => {
                                 set_d_description(e.target.value)
                             }}></textarea>
                         </div>

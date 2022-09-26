@@ -5,7 +5,6 @@ import axios from 'axios';
 import { url } from './../commons/constants';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import Toastify from 'toastify-js'
-
 import "toastify-js/src/toastify.css"
 
 

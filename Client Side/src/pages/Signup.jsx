@@ -3,7 +3,6 @@ import './Signup.css'
 import Axios from 'axios'
 import {useState} from 'react'
 import {url} from '../commons/constants';
-import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 // import './Signup-validation.js'
 import Toastify from 'toastify-js'

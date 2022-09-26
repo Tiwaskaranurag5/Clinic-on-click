@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useHistory, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import './Navbar.css';
-
+import Toastify from 'toastify-js'
 import './nav';
 import { url } from './../commons/constants';
 
@@ -22,13 +22,25 @@ function Navbar({ setIsAuthorized }) {
 
     var logout = () => {
 
-        if(window.confirm('Do you really want to log out ?')){
+        
             localStorage.clear();
-
             setIsAuthorized(false);
             history.push('/');
+            Toastify({
+                text: " Hey! you are Successfully LogOut from  Clinic-on-click",
+                className: "info",
+                offset: {
+                        x:500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #32cd32, #32cd32)",
+                        }
+                      }).showToast();
+
        
-    }
+    
+}
     return (
         <>
             <div id="body-pd">
@@ -94,5 +106,6 @@ function Navbar({ setIsAuthorized }) {
         </>
     )
 }
+
 
 export default Navbar
