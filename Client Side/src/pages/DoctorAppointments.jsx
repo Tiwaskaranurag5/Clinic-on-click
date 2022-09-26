@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { url } from './../commons/constants';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function DoctorAppointments() {
 
@@ -19,7 +21,18 @@ function DoctorAppointments() {
             if (result.status === 'success') {
                 setgetDoctorAppointments(result.data);
             } else {
-                window.alert("Error Fetching Data .....")
+                Toastify({
+                    text: "Error Fetching Data .....",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+               // window.alert("Error Fetching Data .....")
             }
         })
     }

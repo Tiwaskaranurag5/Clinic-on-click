@@ -5,6 +5,8 @@ import {url} from '../commons/constants';
 import axios from 'axios';
 import Specs from '../components/Specs';
 import { useHistory } from 'react-router-dom';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 function Home() {
     
 
@@ -34,7 +36,19 @@ function Home() {
                     })
                 } else {
                   console.log(result.error)
-                  alert('error occured while getting all doctors')
+                  Toastify({
+                    text: "error occured while getting all doctors",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+
+                 // alert('error occured while getting all doctors')
                 }
             }) 
         }
@@ -48,7 +62,18 @@ function Home() {
             if (result.status === 'success') {
               setAllSpecs(result.data)
             } else {
-              alert('error occured while getting all Specialities')
+              Toastify({
+                text: "error occured while getting all Specialities",
+                className: "info",
+                offset: {
+                        x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+             // alert('error occured while getting all Specialities')
             }
           })
         }

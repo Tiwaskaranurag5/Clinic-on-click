@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import './ViewDocInfo.css'
 import { url } from './../commons/constants';
 import axios from 'axios';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 function ViewDocInfo() {
     const [fees, setFees] = useState(0.0);
     const [exp, setExp] = useState(0);
@@ -18,25 +20,113 @@ function ViewDocInfo() {
     var doctor = JSON.parse(cred);
 
     const updateDocInfo =(e)=>{
+        
+
+
+        if (docPhone.length !== 10) {
+            Toastify({
+                text: "please enter 10 digit phone number",
+                className: "info",
+                offset: {
+                        x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+                    }
+
+        
        
-        if (docCity.length === 0) {
-            alert('please enter City')
+         else if (docCity.length === 0) {
+            Toastify({
+                text: "please enter city",
+                className: "info",
+                offset: {
+                        x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
         } 
-        else if (docPhone.length !== 10) {
-            alert('phone number should be of 10 digits')
-        } 
+        // else if (docPhone.length !== 10) {
+        //     Toastify({
+        //         text: "please enter 10 digit phone number",
+        //         className: "info",
+        //         offset: {
+        //                 x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+        //                 y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        //               },
+        //             style: {
+        //                   background: "linear-gradient(to right, #FF0000, #FF0000)",
+        //                 }
+        //               }).showToast();
+          
+            //  alert('phone number should be of 10 digits')
+        
         else if (exp === 0) {
-            alert('please enter Experience (in years)')
+            Toastify({
+                text: "please enter Experience (in years)",
+                className: "info",
+                offset: {
+                        x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           
+            // alert('please enter Experience (in years)')
         } 
-        else if (profilePic === undefined) {
-            alert('please upload profile pic')
-        } 
-        else if (fees === 0.0) {
-            alert('please enter fees')
-        }
         else if (docdesc.length === 0) {
-            alert('please enter Description')
-        }
+            Toastify({
+                text: "please enter Description",
+                className: "info",
+                offset: {
+                        x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();}
+
+             else if (fees === 0.0) {
+            Toastify({
+                            text: "please enter fees",
+                            className: "info",
+                            offset: {
+                                    x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                    y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                  },
+                                style: {
+                                      background: "linear-gradient(to right, #FF0000, #FF0000)",
+                                    }
+                                  }).showToast();
+                        //alert('please enter fees')
+                    }
+
+
+          
+        else if (profilePic === undefined) {
+            Toastify({
+                text: "please upload profile pic",
+                className: "info",
+                offset: {
+                        x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+           // alert('please upload profile pic')
+        } 
+       
         
         else {
                 e.preventDefault()
@@ -55,7 +145,21 @@ function ViewDocInfo() {
                         alert("updated successfully")
                         history.push('/docsignin')
                     }else{
-                        alert('failed to update your profile')
+                        
+                        Toastify({
+                            text: "please enter Description",
+                            className: "info",
+                            offset: {
+                                    x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                    y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                  },
+                                style: {
+                                      background: "linear-gradient(to right, #FF0000, #FF0000)",
+                                    }
+                                  }).showToast();
+                      
+                       
+                        // alert('failed to update your profile')
                     }
                 })
         }

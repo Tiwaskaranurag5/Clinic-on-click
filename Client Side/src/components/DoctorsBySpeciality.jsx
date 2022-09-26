@@ -5,6 +5,8 @@ import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import { url } from '../commons/constants';
 import { GoLocation } from 'react-icons/go';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 
 function DoctorsBySpeciality(props) {
@@ -26,7 +28,18 @@ function DoctorsBySpeciality(props) {
                 setdocListBySpec(result.data)
             } else {
                 console.log(result.error)
-                alert('error occured while getting all doctors')
+                Toastify({
+                    text: "error occured while getting all doctors",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+              //  alert('error occured while getting all doctors')
             }
         })
     }

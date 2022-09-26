@@ -7,6 +7,8 @@ import { AiFillBank, AiFillMail } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { IoMdCall } from "react-icons/io";
 import { url } from '../commons/constants';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 function BloodBankSearch(props) {
 
     const [searchedBloodBanks, setSearchedBloodBanks] = useState([]);
@@ -22,7 +24,18 @@ function BloodBankSearch(props) {
             if (result.status === 'success') {
                 setSearchedBloodBanks(result.data);
             } else {
-                alert("Error fetching in search Data...!!!");
+                Toastify({
+                    text: "Error fetching in search Data...!!!",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+               // alert("Error fetching in search Data...!!!");
             }
         });
     };

@@ -13,7 +13,7 @@ function DoctorDashboard({setIsdrAuthorized}) {
     var cred = localStorage.getItem('DocCreds');
     var doctor = JSON.parse(cred);
         var logOut = () =>{
-            if(window.confirm('Do you really want to log out ?')){
+            {
                 axios.get(url + '/doctor/logout/' + doctor.docId).then((response) => {
                     const result = response.data;
                     if(result.status === 'success'){
@@ -32,8 +32,12 @@ function DoctorDashboard({setIsdrAuthorized}) {
         <body id="body-pd">
                 <header class="header" id="header">
                     {/* <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> */}
-                    <a className="navbar-brand" href="#">
-                        <img src="\images\COC.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" />   
+
+                    <a className="navbar-brand" href="">
+                    <Link to="/viewProfile" class="nav_link">
+                        <img src="\images\COC.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" /> 
+                        </Link>  
+
                     </a>
                     <p style={{marginLeft: "auto" ,marginRight: "15px",fontSize:'20px',marginTop:'10px'}}>Hello, Dr. {doctor.docName}</p>
                     <div class="header_img"> <img src={url + '/'+`${doctor.docProfilePic}`} alt={doctor.docProfilePic} /> </div>
@@ -41,9 +45,12 @@ function DoctorDashboard({setIsdrAuthorized}) {
                 <div class="l-navbar" id="nav-bar" >
                     <nav class="nav">
                         <div>
-                            <a href="#" class="nav_logo">
+                            <a href="" class="nav_logo">
+                            <Link to="/viewProfile" class="nav_link">
                                 <i class='bx bx-layer nav_logo-icon'></i>
-                                <span class="nav_logo-name"><h4>DigiHeal</h4></span>
+                                <span class="nav_logo-name"><h4>COC</h4></span>
+                                </Link>
+                                
                             </a>
                             <div class="nav_list">
                                 
@@ -70,7 +77,7 @@ function DoctorDashboard({setIsdrAuthorized}) {
                             </div>
                         </div> 
                         <div class="nav_link" role='button'>   
-                          <i class='bx bx-log-out nav_icon' ></i> <span class="nav_name" onClick={logOut}>SignOut</span> 
+                        <i class='bx bx-log-out nav_icon' ></i> <span class="nav_name" onClick={logOut}>SignOut</span> 
                          
                         </div> 
                     </nav>

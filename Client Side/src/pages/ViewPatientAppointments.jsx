@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { url } from './../commons/constants';
 import { Link } from 'react-router-dom';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 function ViewPatientAppointments() {
 
@@ -24,7 +26,18 @@ function ViewPatientAppointments() {
             if (result.status === 'success') {
                 setpatientAppointments(result.data);
             } else {
-                window.alert("Error Fetching Appointment Data ....")
+                Toastify({
+                    text: "Error Fetching Appointment Data ....",
+                    className: "info",
+                    offset: {
+                            x: 650, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y: 5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+               // window.alert("Error Fetching Appointment Data ....")
             }
         })
     }

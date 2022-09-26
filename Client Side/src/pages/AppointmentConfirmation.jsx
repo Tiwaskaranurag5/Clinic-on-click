@@ -6,6 +6,8 @@ import axios from 'axios'
 import { url } from '../commons/constants';
 import queryString from 'query-string'
 import { useLocation } from 'react-router-dom'
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 function AppointmentConfirmation(props) {
 
     const [doctorDetails, setdoctorDetails] = useState([]);
@@ -27,7 +29,18 @@ function AppointmentConfirmation(props) {
             if (result.status === 'success') {
                 setdoctorDetails(result.data)
             } else {
-                alert("Error fetching in Doctor's Data...!!!")
+                Toastify({
+                    text: "Error fetching in Doctor's Data...!!!",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+               // alert("Error fetching in Doctor's Data...!!!")
             }
         })
     }
@@ -46,10 +59,34 @@ function AppointmentConfirmation(props) {
             if (result.status === "success") {
                 console.log(response.status);
                 console.log(response.data);
-                window.alert('Appointment Booked SuccessFully !!!')
+                Toastify({
+                    text: "Appointment Booked SuccessFully !!!",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+
+
+               // window.alert('Appointment Booked SuccessFully !!!')
                 history.push('/patientAppointment')
             } else {
-                window.alert('appointment booking failed')
+                Toastify({
+                    text: "appointment booking failed",
+                    className: "info",
+                    offset: {
+                            x: 600, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast();
+                //window.alert('appointment booking failed')
             }
         })
     }

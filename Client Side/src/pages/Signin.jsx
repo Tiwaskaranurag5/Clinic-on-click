@@ -6,6 +6,9 @@ import { url } from './../commons/constants';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import Toastify from 'toastify-js'
 
+import "toastify-js/src/toastify.css"
+
+
 
 
 
@@ -18,9 +21,33 @@ function Signin({ setIsAuthorized }) {
     axios.defaults.withCredentials = false;
     const logIn = (e) => {
         if (emailLogin.length === 0) {
-            alert('please enter email')
-        } else if (passwordLogin.length === 0) {
-            alert('please enter password')
+            Toastify({
+                text: "please enter email Id",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:255  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+        }
+        
+        else if (passwordLogin.length === 0) {
+            Toastify({
+                text: "Please enter password",
+                className: "info",
+                offset: {
+                        x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                        y:310  // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                      },
+                    style: {
+                          background: "linear-gradient(to right, #FF0000, #FF0000)",
+                        }
+                      }).showToast();
+
+           // alert('please enter password')
         } else {
             e.preventDefault()
             const data = new FormData();
@@ -38,23 +65,30 @@ function Signin({ setIsAuthorized }) {
                         console.log(result.data);
                         localStorage.setItem('credentials', JSON.stringify(result.data))
                         setIsAuthorized(true)
-                        // window.alert('Hey! you are Successfully Logged In to DigiHeal');
-                        
+
                         Toastify({
-                                text: "login successfully",
-                                className: "info",
-                                offset: {
-                                        x: 700, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                                        y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
-                                      },
-                                    style: {
-                                          background: "linear-gradient(to right, #24933D, #24933D)",
-                                        }
-                                      }).showToast();
-                                    history.push('/')
-                    } 
-                    else {
-                        console.log("something wrong")
+                            text: " Hey! you are Successfully Logged In to Clinic-on-click",
+                            className: "info",
+                            offset: {
+                                    x:500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                                    y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                                  },
+                                style: {
+                                      background: "linear-gradient(to right, #32cd32, #32cd32)",
+                                    }
+                                  }).showToast();
+
+
+
+
+
+
+
+                       // window.alert('Hey! you are Successfully Logged In to Clinic-on-click');
+                        //history.push('/')
+                    } else {
+                        window.alert('Registeration Failed..');
+
                     }
 
                 }).catch((res)=>{if(res.data===""){
@@ -100,7 +134,7 @@ function Signin({ setIsAuthorized }) {
                     </div>
                     <div className="main_display_image col-sm-3 col-md-9 col-lg-6">
                         <h1 style={{ textAlign: 'center' }}>
-                            Welcome to DigiHeal
+                            Welcome to Clinic-on-click
                         </h1>
                         <h5 style={{ textAlign: 'center' }}>
                             We are always there for you...
@@ -110,7 +144,7 @@ function Signin({ setIsAuthorized }) {
 
                     <div className="main_display_form col-sm-3 col-md-9 col-lg-6 mb-3 py-4">
 
-                        <h3 style={{ textAlign: 'center' }}>Login to DigiHeal</h3>
+                        <h3 style={{ textAlign: 'center' }}>Login to Clinic-on-click</h3>
 
                         <div className="row mb-3">
                             <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
