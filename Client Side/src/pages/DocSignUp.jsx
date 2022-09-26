@@ -261,6 +261,7 @@ function DocSignUp() {
                         if(result.status == "success"){
                             // console.log(response.status);
                             // console.log(response.data);
+
                             Toastify({
                               text: " YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT Clinic-on-click!",
                               className: "info",
@@ -274,6 +275,8 @@ function DocSignUp() {
                                     }).showToast();
 
                             // window.alert('YOU ARE SUCCESSFULLY REGISTERED AS DOCTOR AT  Clinic-on-click!');
+
+
                         }
                     })
                     

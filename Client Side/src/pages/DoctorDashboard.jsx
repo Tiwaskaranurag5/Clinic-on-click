@@ -32,10 +32,12 @@ function DoctorDashboard({setIsdrAuthorized}) {
         <body id="body-pd">
                 <header class="header" id="header">
                     {/* <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> */}
+
                     <a className="navbar-brand" href="">
                     <Link to="/viewProfile" class="nav_link">
-                        <img src="\images\COC_logo.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" /> 
+                        <img src="\images\COC.png" alt="" width="120px" height="30" class="d-inline-block align-text-top" /> 
                         </Link>  
+
                     </a>
                     <p style={{marginLeft: "auto" ,marginRight: "15px",fontSize:'20px',marginTop:'10px'}}>Hello, Dr. {doctor.docName}</p>
                     <div class="header_img"> <img src={url + '/'+`${doctor.docProfilePic}`} alt={doctor.docProfilePic} /> </div>

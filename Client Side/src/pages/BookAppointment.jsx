@@ -14,7 +14,7 @@ function BookAppointment(props) {
   const [bookedAppointments, setbookedAppointments] = useState([])
   const [visibleSlots, setVisibleSlots] = useState(false);
   var bookSlotIdArray = [];
-  //Session Storage variables
+
   var patientInfo = localStorage.getItem('credentials')
   var pat = JSON.parse(patientInfo)
   //Console for Checking

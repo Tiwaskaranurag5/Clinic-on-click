@@ -1,6 +1,6 @@
 import './App.css';
 import Signin from './pages/Signin';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import SideBar from './pages/SideBar';
 
@@ -20,12 +20,20 @@ import ForgotPassword from './components/ForgotPassword';
 function App() {
   const [isAuthorized, setIsAuthorized] = useState(false)
   const [isdrAuthorized, setIsdrAuthorized] = useState(false)
+
    
  useEffect(()=>{
   const p = localStorage.getItem('credentials')
   const d = localStorage.getItem('DocCreds')
+
+
+
   if(p!=null){
     setIsAuthorized(true);
+   // setIsdrAuthorized(true);
+  }
+  if(d!=null){
+    setIsdrAuthorized(true);
   }
   if(d!=null){
     setIsdrAuthorized(true);
@@ -33,19 +41,27 @@ function App() {
 },[])
   return (
     <div className="App">
-
-      <Router>
+        <Router>
         <Switch>
           <div className="container">
-            <Route  path='/' render={() => {
+
+            
+
+          <Route exact path="/"><Redirect to="/client"/></Route>
+            <Route path='/client' render={() => {
+
               return (isAuthorized ? <SideBar authorized={isAuthorized} setIsAuthorized={setIsAuthorized} /> :
-                <Signin setIsAuthorized={setIsAuthorized} />)
+              <Signin setIsAuthorized={setIsAuthorized} />)
             }} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/docsignin' render={() => {
+
+           
+
+            <Route   path='/docsignin' render={() => {
+
               return (isdrAuthorized ? <DoctorDashboard authorized={isdrAuthorized} setIsdrAuthorized={setIsdrAuthorized} /> :
                 <DocSignin setIsdrAuthorized={setIsdrAuthorized} />)
             }} />
+            <Route exact path='/signup' component={Signup} />
             <Route exact path='/forgotpassword' component={ForgotPassword} />
             <Route exact path='/docsignup' component={DocSignUp} />
             {/* <Route path='/docdashboard' component={()=>{return <DoctorDashboard authorized={isAuthorized}/>}} /> */}

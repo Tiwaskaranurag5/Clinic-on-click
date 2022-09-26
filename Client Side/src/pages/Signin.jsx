@@ -5,7 +5,9 @@ import axios from 'axios';
 import { url } from './../commons/constants';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import Toastify from 'toastify-js'
+
 import "toastify-js/src/toastify.css"
+
 
 
 
@@ -55,6 +57,7 @@ function Signin({ setIsAuthorized }) {
             try {
                 axios.post(url + '/patient/authenticate', data).then((response) => {
                     // response.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+                    console.log(response.data)
                     const result = response.data;
                     console.log(result.data);
                     if (result.status === 'success') {
@@ -62,6 +65,7 @@ function Signin({ setIsAuthorized }) {
                         console.log(result.data);
                         localStorage.setItem('credentials', JSON.stringify(result.data))
                         setIsAuthorized(true)
+
                         Toastify({
                             text: " Hey! you are Successfully Logged In to Clinic-on-click",
                             className: "info",
@@ -84,9 +88,22 @@ function Signin({ setIsAuthorized }) {
                         //history.push('/')
                     } else {
                         window.alert('Registeration Failed..');
+
                     }
 
-                });
+                }).catch((res)=>{if(res.data===""){
+                    console.log("error in response")
+                }else{Toastify({
+                    text: "Invalid Email or Password",
+                    className: "info",
+                    offset: {
+                            x: 500, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                            y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast()}});
             } catch (error) {
                 console.log(error)
             }
@@ -159,6 +176,7 @@ function Signin({ setIsAuthorized }) {
                             <Link to="/signup">
                                 <button type="button" class="btn btn-primary" onClick={() => { return <Redirect to='/signup' /> }}>Create New Account</button>
                             </Link>
+                            
                         </div>
 
                     </div>

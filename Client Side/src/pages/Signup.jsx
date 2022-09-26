@@ -6,6 +6,7 @@ import {url} from '../commons/constants';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 // import './Signup-validation.js'
+import Toastify from 'toastify-js'
 
 // import Signin from './pages/Signin';
 import { Link } from 'react-router-dom';
@@ -30,6 +31,7 @@ function Signup() {
     const patientSignup = (e) =>{
         if (p_name.length === 0) {
             Toastify({
+
                 text: "please enter name",
                 className: "info",
                 offset: {
@@ -38,6 +40,8 @@ function Signup() {
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",
+
+               
                         }
                       }).showToast();
           } else if (p_gender.length === 0) {
@@ -54,12 +58,15 @@ function Signup() {
                       }).showToast();
           } 
          else if (p_phone.length !== 10) {
+
             Toastify({
                 text: "please enter 10 digit phone number",
                 className: "info",
                 offset: {
                         x: 5, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+
                         y:200 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+
                       },
                     style: {
                           background: "linear-gradient(to right, #FF0000, #FF0000)",

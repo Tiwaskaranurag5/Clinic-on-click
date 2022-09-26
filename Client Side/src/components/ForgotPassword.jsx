@@ -20,7 +20,9 @@ function ForgotPassword() {
         const body ={
             "email":email
         }
-        axios.post(url + '/email/forgot', body).then((response) => {
+
+        axios.post(url + '/email/forgot',body).then((response) => {
+
             if (response.data.status === 'success') {
                 setEncOTP(response.data.data)
                 setIsOtpSent(true)

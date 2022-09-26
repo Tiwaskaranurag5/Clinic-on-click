@@ -65,6 +65,7 @@ function DocSignin({ setIsdrAuthorized }) {
                         localStorage.setItem('DocCreds', JSON.stringify(result.data))
                         // window.location = '/docsignin';
                         setIsdrAuthorized(true)
+
                         Toastify({
                             text: " Hey! you are Successfully Logged In to Clinic-on-click",
                             className: "info",
@@ -78,6 +79,9 @@ function DocSignin({ setIsdrAuthorized }) {
                                   }).showToast();
 
                        // window.alert('Hey! you are Successfully Logged In to Clinic-on-click');
+
+                      
+
                         history.push('/docsignin')
                     } else {
                         window.alert('Registeration Failed..');
