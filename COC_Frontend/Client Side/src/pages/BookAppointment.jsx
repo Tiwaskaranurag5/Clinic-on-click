@@ -95,7 +95,7 @@ function BookAppointment(props) {
                         {fontSize: '20px'}
                 }>Select Date to check available slots:</label>
                 <div class="col-xs-8 col-sm-8">
-                    <input type="date" name="dob" className="form-control" id="dob"
+                    <input type="date" min="2022-09-27" name="dob" className="form-control" id="dob"
                         onChange={
                             (e) => {
                                 setDate(e.target.value);

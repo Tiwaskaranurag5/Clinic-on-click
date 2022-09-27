@@ -87,7 +87,19 @@ function DocSignin({ setIsdrAuthorized }) {
                         window.alert('Registeration Failed..');
                     }
 
-                });
+                }).catch((res)=>{if(res.data===""){
+                    console.log("error in response")
+                }else{Toastify({
+                    text: "Invalid Email or Password",
+                    className: "info",
+                    offset: {
+                        x:500, 
+                        y:5 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+                          },
+                        style: {
+                              background: "linear-gradient(to right, #FF0000, #FF0000)",
+                            }
+                          }).showToast()}});;
             } catch (error) {
                 console.log(error)
             }
