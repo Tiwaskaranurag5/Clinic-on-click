@@ -36,7 +36,11 @@ function Signin({setIsAuthorized}) {
                  window.alert('Registeration Failed..');
              }
              
-        });
+        }).catch((res)=>{if(res.data===""){
+            console.log("error in response")
+        }else{
+            window.alert('Enter Correct Email Or password');
+                  }});;
     }catch (error) {
         console.log(error)
     }

@@ -1,14 +1,18 @@
 import React from "react";
 import "./Welcome.css";
 import { useState, useEffect } from 'react'
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { url } from '../commons/constants';
 import  axios  from 'axios';
 
 function Welcome() {
 
-  
+  let history = useHistory();
   const [getOnlineDoctorCount, setgetOnlinedoctorCount] = useState(0)
+
+  const consult = (e) =>{
+    history.push("/client/speciality")
+  }
 
   useEffect(() => {
     axios.get(url + 'patient/countonlinedoctors').then((response)=>{
@@ -54,18 +58,16 @@ function Welcome() {
             of their homes. Online doctor consultation is done via video
             conferencing, telephonic conversations or online chats.
             </p>
-            <p>
+            {/* <p>
               <div className="onlineDoc" style={{display:"flex", flexDirection:"row" , justifyContent:"center"}}>
                 <img src="\images\online.png" style={{ width: "20px", height: "20px" , marginRight:"10px" , borderRadius:"50px"}}/> {getOnlineDoctorCount} Doctors Online
               </div>
-            </p>
+            </p> */}
             <Link to="/home">
               <button
                 type="button"
                 class="btn btn-primary"
-                onClick={() => {
-                  return <Redirect to="/signin" />;
-                }}
+                onClick={consult}
               >
                 Consult Now
               </button>

@@ -19,7 +19,7 @@ function App() {
         <Switch>
           <div className="container">
           {/* <Route path='/' exact component={()=>{return <AdminLogin setIsAuthorized={setIsAuthorized}/>}} /> */}
-          <Route  path='/'  render={()=>{return( isAuthorized? <Navbar authorized={isAuthorized} setIsAuthorized={setIsAuthorized}/>: <AdminLogin setIsAuthorized={setIsAuthorized}/>)}} />
+          <Route exact path='/'  render={()=>{return( isAuthorized? <Navbar authorized={isAuthorized} setIsAuthorized={setIsAuthorized}/>: <AdminLogin setIsAuthorized={setIsAuthorized}/>)}} />
           {/* <Route path='/nav' exact component={()=>{return <Navbar authorized={isAuthorized}/>}} /> */}
           <Route path='/forgotpassword' component={ForgotPassword} />
           </div>
